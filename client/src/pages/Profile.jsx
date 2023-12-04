@@ -76,6 +76,7 @@ export default function Profile() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        credentials: 'include'
       });
       const data = await res.json();
 
@@ -96,7 +97,8 @@ export default function Profile() {
       dispatch(deleteUserStart());
 
       const res = await fetch(`https://deploymern.vercel.app/api/user/delete/${currentUser._id}`,{
-        method: 'DELETE'
+        method: 'DELETE',
+        credentials: 'include'
       });
 
       const data = await res.json();
@@ -114,7 +116,9 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signoutUserStart());
-      const res = await fetch('https://deploymern.vercel.app/api/auth/signout');
+      const res = await fetch('https://deploymern.vercel.app/api/auth/signout', {
+        credentials: 'include'
+      });
       const data = await res.json();
 
       if(data.success === false) {
@@ -131,7 +135,9 @@ export default function Profile() {
   const handleShowListings = async () => {
     try {
       setshowListingsError(false);
-      const res = await fetch(`https://deploymern.vercel.app/api/user/listings/${currentUser._id}`);
+      const res = await fetch(`https://deploymern.vercel.app/api/user/listings/${currentUser._id}`, {
+        credentials: 'include'
+      });
       const data = await res.json();
 
       if(data.success === false) {
