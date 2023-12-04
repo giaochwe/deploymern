@@ -19,9 +19,7 @@ mongoose.connect(process.env.MONGO)
 const app = express();
 app.use(cors(
     {
-        origin: ["https://deploymern-fe-riggina.vercel.app/"],
-        methods: ["POST", "GET"],
-        credentials: true
+        origin: ["https://deploymern-fe-riggina.vercel.app"]
     }
 ));
 
