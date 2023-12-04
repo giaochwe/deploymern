@@ -70,7 +70,7 @@ export default function Profile() {
 
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+      const res = await fetch(`https://deploymern.vercel.app/api/user/update/${currentUser._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function Profile() {
     try {
       dispatch(deleteUserStart());
 
-      const res = await fetch(`/api/user/delete/${currentUser._id}`,{
+      const res = await fetch(`https://deploymern.vercel.app/api/user/delete/${currentUser._id}`,{
         method: 'DELETE'
       });
 
@@ -114,7 +114,7 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signoutUserStart());
-      const res = await fetch('/api/auth/signout');
+      const res = await fetch('https://deploymern.vercel.app/api/auth/signout');
       const data = await res.json();
 
       if(data.success === false) {
@@ -131,7 +131,7 @@ export default function Profile() {
   const handleShowListings = async () => {
     try {
       setshowListingsError(false);
-      const res = await fetch(`/api/user/listings/${currentUser._id}`);
+      const res = await fetch(`https://deploymern.vercel.app/api/user/listings/${currentUser._id}`);
       const data = await res.json();
 
       if(data.success === false) {
@@ -147,7 +147,7 @@ export default function Profile() {
   const handleDeleteListing = async (listingId) =>{
     try {
       setDeleteListingsError(false);
-      const res = await fetch(`/api/listing/delete/${listingId}`, {
+      const res = await fetch(`https://deploymern.vercel.app/api/listing/delete/${listingId}`, {
         method: 'DELETE',
       })
       const data = await res.json();

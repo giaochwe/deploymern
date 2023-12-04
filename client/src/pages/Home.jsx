@@ -15,7 +15,7 @@ export default function Home() {
     useEffect(() => {
       const fetchOfferListings = async () => {
         try {
-          const res = await fetch('/api/listing/getLists?offer=true&limit=4');
+          const res = await fetch('https://deploymern.vercel.app/api/listing/getLists?offer=true&limit=4');
           const data = await res.json();
           setOfferListings(data);
           fetchRentListings();
@@ -25,7 +25,7 @@ export default function Home() {
       };
       const fetchRentListings = async () => {
         try {
-          const res = await fetch('/api/listing/getLists?type=rent&limit=4');
+          const res = await fetch('https://deploymern.vercel.app/api/listing/getLists?type=rent&limit=4');
           const data = await res.json();
           setRentListings(data);
           fetchSaleListings();
@@ -35,7 +35,7 @@ export default function Home() {
       };
       const fetchSaleListings = async () => {
         try {
-          const res = await fetch('/api/listing/getLists?type=sale&limit=4');
+          const res = await fetch('https://deploymern.vercel.app/api/listing/getLists?type=sale&limit=4');
           const data = await res.json();
           setSaleListings(data);
         } catch (error) {

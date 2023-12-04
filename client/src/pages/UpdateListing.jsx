@@ -31,7 +31,7 @@ export default function UpdateListing() {
   useEffect(() => {
     const fetchListing = async () => {
         const listingId = params.listingId;
-        const res = await fetch(`/api/listing/getLists/${listingId}`);
+        const res = await fetch(`https://deploymern.vercel.app/api/listing/getLists/${listingId}`);
         const data = await res.json();
 
         if(data.success === false) {
