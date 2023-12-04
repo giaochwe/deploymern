@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO)
 
 const app = express();
 app.use(cors({
-    origin: 'https://deploymern-fe.vercel.app',
+    origin: 'https://estateparadise.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   }));
