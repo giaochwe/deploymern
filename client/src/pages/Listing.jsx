@@ -28,7 +28,7 @@ export default function Listing() {
         const fetchListing = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`https://deploymern.vercel.app/api/listing/getLists/${params.listingId}`, {
+                const res = await fetch(`https://deploymern.vercel.app/api/listing/getLists/${params._id}`, {
                     credentials: 'include'
                 }
                 );
