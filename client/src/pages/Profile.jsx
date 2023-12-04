@@ -149,6 +149,7 @@ export default function Profile() {
       setDeleteListingsError(false);
       const res = await fetch(`https://deploymern.vercel.app/api/listing/delete/${listingId}`, {
         method: 'DELETE',
+        credentials: 'include',
       })
       const data = await res.json();
 

@@ -23,6 +23,7 @@ export default function Signup() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        credentials: 'include',
       });
       const data = await res.json();
       console.log(data);
